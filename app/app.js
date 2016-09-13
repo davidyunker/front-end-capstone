@@ -3,6 +3,17 @@
 var app = angular.module("DrinkingApp", ["ngRoute"])
 .constant("FirebaseURL", "https://drinking-on-vacation.firebaseio.com/");
 
+
+let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
+    if (AuthFactory.isAuthenticated()) {
+        console.log("Authenticated user. Go ahead");
+        resolve();
+    } else {
+        console.log("Notauthenticated user. Go away.")
+        reject();
+    }
+})
+
 app.config(function($routeProvider) {
     $routeProvider.
         when("/", {
@@ -59,9 +70,5 @@ app.run(($location, FBCreds) => {
         authDomain: creds.authDomain
     };
     firebase.initializeApp(authConfig);
-
-
-// when the route is this, use this.
-// templateUrl == U is capitalized. everything else isn't
 
 });
