@@ -15,6 +15,12 @@ app.controller("LoginCtrl", function ($scope, $window, AuthFactory ) {
 
   };
 
+
+  $scope.enterKeyPressed = function(keyEvent) {
+  if (keyEvent.which === 13)
+    $scope.login();
+}
+
   $scope.register = () => {
     console.log("you clicked register");
     // grab method from AuthFactory
