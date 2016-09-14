@@ -52,7 +52,7 @@ app.controller("LoginCtrl", function ($scope, $window, AuthFactory ) {
         }
         console.log("here's the data", data);
       }, (error) => {
-        console.log("error loggin in", error);
+        console.log("error logging in", error);
       });
   };
 });

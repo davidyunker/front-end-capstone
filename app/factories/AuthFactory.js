@@ -1,6 +1,21 @@
 "use strict";
 
 app.factory("AuthFactory", function ($q) {
+    let _uid = null;
+    let getUid = function () {
+        return _uid
+    }
+
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        console.log("onAuthStateChanged running")
+        _uid = user.uid
+        console.log("uid in onAuthStateChanged", _uid)
+    })
+
+
+
+
   let createUser = function(userObj) {
     return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
       .catch(function(error) {
@@ -8,6 +23,8 @@ app.factory("AuthFactory", function ($q) {
         let errorMessage = error.message;
 
       });
+
+
     // passing object that will contain email and password
 
     // we're going to return a promise. but we don't have to write it ourselves.
@@ -32,5 +49,5 @@ app.factory("AuthFactory", function ($q) {
     // shortened version of if/lese the ? checks for the veracity. True the first value. Second the other value after the : Ternary(sp?)
   };
 
-    return {createUser, loginUser, logoutUser, isAuthenticated};
+    return {createUser, loginUser, logoutUser, isAuthenticated, getUid};
 });
