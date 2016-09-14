@@ -52,8 +52,24 @@ app.controller("LoginCtrl", function ($scope, $window, AuthFactory ) {
         }
         console.log("here's the data", data);
       }, (error) => {
-        console.log("error loggin in", error);
+        console.log("error logging in", error);
       });
   };
+
+  $scope.googleLogin = () => {
+  console.log("you clicked google login");
+   AuthFactory.logInGoogle()
+      .then( (data) => {
+        if (data) {
+          $window.location.href = "#/search";
+        }else {
+          $window.location.href = "#/login";
+        }
+        console.log("here's the data", data);
+      }, (error) => {
+        console.log("error logging in", error);
+      });
+  };
+
 });
 

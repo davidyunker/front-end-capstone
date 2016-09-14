@@ -27,34 +27,25 @@ app.config(function($routeProvider) {
         // this stands for home
         when("/search", {
             templateUrl: "partials/search.html",
-            controller: 'SearchCtrl',
-            resolve: {isAuth}
-
+            controller: 'SearchCtrl'
         }).
         when("/yourbreweries", {
             templateUrl: "partials/saved-breweries.html",
-            controller: "YourBreweriesCtrl",
-            resolve: {isAuth}
-
+            controller: "YourBreweriesCtrl"
         }).
         when("/yourbreweries/view/:breweryId", {
             templateUrl: "partials/single-brewery.html",
-            controller: "BreweryViewCtrl",
-            resolve: {isAuth}
+            controller: "BreweryViewCtrl"
 
     // passing in a variable to stand in as a placeholder for any ID.
         }).
           when('/yourbreweries/edit/:breweryId', {
             templateUrl: 'partials/single-brewery-edit.html',
-            controller: "BreweryEditCtrl",
-            resolve: {isAuth}
-
+            controller: "BreweryEditCtrl"
         }).
         when('/allreviews', {
             templateUrl: 'partials/all-reviews.html',
-            controller: "AllReviewsCtrl",
-            resolve: {isAuth}
-
+            controller: "AllReviewsCtrl"
         }).
 
 

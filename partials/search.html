@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Search for breweries</h1>
+    <form>
+      <div class="form-group">
+        <label>Search by City</label>
+        <input type="text" class="form-control" placeholder="Nashville" ng-model="userSearch.city" ng-keypress="enterKeyPressed($event)"/>
+        <label>Search by State</label>
+        <input type="text" class="form-control" placeholder="Tennessee" ng-model="userSearch.state" ng-keypress="enterKeyPressed($event)"/>
+         <label>Search by ZIP</label>
+        <input type="text" class="form-control" placeholder="37203" ng-model="userSearch.zip" ng-keypress="enterKeyPressed($event)"/>
+      </div>
+      <button class="btn btn-default" ng-click="loadBreweries()">Get some breweries</button>
+    </form>
+</div>
