@@ -13,7 +13,11 @@ app.factory("AuthFactory", function ($q) {
         console.log("uid in onAuthStateChanged", _uid)
     })
 
+let provider = new firebase.auth.GoogleAuthProvider();
 
+function logInGoogle() {
+  return firebase.auth().signInWithPopup(provider);
+}
 
 
   let createUser = function(userObj) {
@@ -49,5 +53,5 @@ app.factory("AuthFactory", function ($q) {
     // shortened version of if/lese the ? checks for the veracity. True the first value. Second the other value after the : Ternary(sp?)
   };
 
-    return {createUser, loginUser, logoutUser, isAuthenticated, getUid};
+    return {createUser, loginUser, logoutUser, isAuthenticated, getUid, logInGoogle};
 });
