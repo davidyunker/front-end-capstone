@@ -1,17 +1,15 @@
 <div class="container">
-<a class="waves-effect waves-light btn-large light-blue darken-1">Your Breweries</a>
-<a class="waves-effect waves-light btn-large light-blue darken-1">Recent Reviews</a>
-    <h1>Search for breweries</h1>
+<a class="waves-effect waves-light btn-large light-blue darken-1">Your routes</a>
+<a class="waves-effect waves-light btn-large light-blue darken-1">All routes</a>
+    <h1>Make your route</h1>
 
     <form>
       <div class="form-group">
-        <label>Search by City</label>
-        <input type="text" class="form-control" placeholder="Nashville" ng-model="userSearch.city" ng-keypress="enterKeyPressed($event)"/>
-        <label>Search by State</label>
-        <input type="text" class="form-control" placeholder="Tennessee" ng-model="userSearch.state" ng-keypress="enterKeyPressed($event)"/>
-         <label>Search by ZIP</label>
-        <input type="text" class="form-control" placeholder="37203" ng-model="userSearch.zip" ng-keypress="enterKeyPressed($event)"/>
+        <label>Starting address</label>
+        <input type="text" class="form-control" placeholder="Address 1" ng-model="routeInfo.address1" ng-keypress="enterKeyPressed($event)"/>
+        <label>Ending address</label>
+        <input type="text" class="form-control" placeholder="Address 2" ng-model="routeInfo.address2" ng-keypress="enterKeyPressed($event)"/>
       </div>
-      <button class="btn btn-default" ng-click="loadBreweries()">Get some breweries</button>
+      <button class="btn btn-default" ng-click="loadRouteInfo()">Create route</button>
     </form>
 </div>

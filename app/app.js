@@ -1,7 +1,7 @@
 "use strict";
 
-var app = angular.module("DrinkingApp", ["ngRoute"])
-.constant("FirebaseURL", "https://drinking-on-vacation.firebaseio.com/");
+var app = angular.module("BeforeYouGoApp", ["ngRoute"])
+.constant("FirebaseURL", "before-you-go.firebaseapp.com");
 
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
@@ -29,25 +29,6 @@ app.config(function($routeProvider) {
             templateUrl: "partials/search.html",
             controller: 'SearchCtrl'
         }).
-        when("/yourbreweries", {
-            templateUrl: "partials/saved-breweries.html",
-            controller: "YourBreweriesCtrl"
-        }).
-        when("/yourbreweries/view/:breweryId", {
-            templateUrl: "partials/single-brewery.html",
-            controller: "BreweryViewCtrl"
-
-    // passing in a variable to stand in as a placeholder for any ID.
-        }).
-          when('/yourbreweries/edit/:breweryId', {
-            templateUrl: 'partials/single-brewery-edit.html',
-            controller: "BreweryEditCtrl"
-        }).
-        when('/allreviews', {
-            templateUrl: 'partials/all-reviews.html',
-            controller: "AllReviewsCtrl"
-        }).
-
 
         otherwise("/");
         // way to make sure they don't go anywhere else.

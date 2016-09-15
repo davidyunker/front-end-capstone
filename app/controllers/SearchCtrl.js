@@ -8,10 +8,15 @@ app.controller("SearchCtrl", function ($scope, AuthFactory, FirebaseFactory, FBC
 let _uid = AuthFactory.getUid()
 
 
-   $scope.userSearch = {
-    "city" : "",
-    "state" : "",
-    "zip" : "",
+   $scope.routeInfo = {
+    "address1" : "",
+    "address2" : "",
+    "route" : "",
+    "time": "",
+    "pokestops": "",
+    "gyms": "",
+    "rare": "",
+    "details": "",
     "uid" : _uid
 
   };
@@ -19,16 +24,9 @@ let _uid = AuthFactory.getUid()
 
 
 
- $scope.loadBreweries = function() {
-      console.log("loadBreweries has started!")
-  let cityName = $scope.userSearch.city
-  let creds = FBCreds
-  let myKey = creds.breweryApiKey
-  let stateName = $scope.userSearch.state
-  let zipName = $scope.userSearch.zip
-      FirebaseFactory.getBreweryByCity($scope.userSearch)
-      FirebaseFactory.getBreweryByState($scope.userSearch)
-      FirebaseFactory.getBreweryByZip($scope.userSearch)
+ $scope.loadRouteInfo = function() {
+      console.log("loadRouteInfo has started!")
+      FirebaseFactory.getRouteInfo($scope.routeInfo)
         .then(function(){
           console.log("it worked!")
         })
