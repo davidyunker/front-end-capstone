@@ -1,0 +1,42 @@
+<div class="container">
+<a class="waves-effect waves-light btn-large light-blue darken-1">Your routes</a>
+<a class="waves-effect waves-light btn-large light-blue darken-1">All routes</a>
+
+<form>
+      <div class="form-group">
+      <label>Name of route</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.name" ng-keypress="enterKeyPressed($event)"/>
+        <label>Starting address</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.address1" ng-keypress="enterKeyPressed($event)"/>
+        <label>Ending address</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.address2" ng-keypress="enterKeyPressed($event)"/>
+        <label>Route length in miles</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.routeLengthMiles"/>
+         <label>Route length in kilometers</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.routeLengthKM"/>
+         <label>Time to complete walk</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.time"/>
+         <label>Number of Pokestops</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.pokestops"/>
+        <label> Number of gyms</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.gyms"/>
+        <label> Rare Pokemon sightings</label>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.rare"/>
+        <label> Other details</label>
+        <input type="textarea" class="form-control" ng-model="pokeRouteInfo.details"/>
+      </div>
+      <button class="btn btn-default" ng-click="savePokeRouteInfo()">Save route</button>
+    </form>
+
+ <!--       $scope.pokeRouteInfo = {
+    "address1" : "",
+    "address2" : "",
+    "routeLengthMiles": "",
+    "routeLengthKM" : "",
+    "time": "",
+    "pokestops": "",
+    "gyms": "",
+    "rare": "",
+    "details": "",
+    "uid" : _uid
+  }; -->

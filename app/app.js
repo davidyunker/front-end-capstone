@@ -29,6 +29,10 @@ app.config(function($routeProvider) {
             templateUrl: "partials/search.html",
             controller: 'SearchCtrl'
         }).
+         when("/saveroute", {
+            templateUrl: "partials/save-route.html",
+            controller: 'SearchCtrl'
+        }).
 
         otherwise("/");
         // way to make sure they don't go anywhere else.

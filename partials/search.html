@@ -6,10 +6,10 @@
     <form>
       <div class="form-group">
         <label>Starting address</label>
-        <input type="text" class="form-control" placeholder="Address 1" ng-model="routeInfo.address1" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" placeholder="Address 1" ng-model="pokeRouteInfo.address1" ng-keypress="enterKeyPressed($event)"/>
         <label>Ending address</label>
-        <input type="text" class="form-control" placeholder="Address 2" ng-model="routeInfo.address2" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" placeholder="Address 2" ng-model="pokeRouteInfo.address2" ng-keypress="enterKeyPressed($event)"/>
       </div>
-      <button class="btn btn-default" ng-click="loadRouteInfo()">Create route</button>
+      <button class="btn btn-default" ng-click="loadPokeRouteInfo()">Create route</button>
     </form>
 </div>
