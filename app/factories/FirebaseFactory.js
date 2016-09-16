@@ -46,24 +46,24 @@ let postPokeRoute = (routeObj) => {
 
 
 
-// let patchPokeRoute = (routeObj, currentRouteID) => {
-//   console.log("patchPokeRoute is running", currentRouteID)
-//     return $q((resolve, reject) => {
-//        $http.patch(`${FirebaseURL}/pokeroutes/${currentRouteID}.json`,
-//         JSON.stringify(routeObj))
-//         .success((ObjFromFirebase) => {
-//           console.log(ObjFromFirebase);
-//           // currentRouteID = ObjFromFirebase.name;
-//           console.log(currentRouteID)
-//           resolve(ObjFromFirebase);
-//         })
-//         .error ((error) => {
-//           reject(error);
-//     })
-//     })
+let patchPokeRoute = (routeObj, currentRouteID) => {
+  console.log("patchPokeRoute is running", currentRouteID)
+    return $q((resolve, reject) => {
+       $http.put(`${FirebaseURL}/pokeroutes/${currentRouteID}.json`,
+        JSON.stringify(routeObj))
+        .success((ObjFromFirebase) => {
+          console.log(ObjFromFirebase);
+          // currentRouteID = ObjFromFirebase.name;
+          console.log(currentRouteID)
+          resolve(ObjFromFirebase);
+        })
+        .error ((error) => {
+          reject(error);
+    })
+    })
 
 
-// }
+}
 
 
 let getPokeRouteFromFB = (currentRouteID) => {
@@ -79,7 +79,7 @@ let getPokeRouteFromFB = (currentRouteID) => {
        })
      })
 }
-    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB}
+    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute}
   });
 
 

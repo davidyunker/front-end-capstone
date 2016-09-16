@@ -48,6 +48,10 @@ let _uid = AuthFactory.getUid()
             console.log(result);
             $scope.pokeRouteInfo.routeid = result.name
             console.log('TESTING MORE THINGS', $scope.pokeRouteInfo)
+          FirebaseFactory.patchPokeRoute($scope.pokeRouteInfo, $scope.pokeRouteInfo.routeid)
+            console.log("PATCHPOKEROUTE RUNNING MAYBE!")
+
+
             // $location.url('/saveroute');
         })
         })
