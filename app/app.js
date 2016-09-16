@@ -29,7 +29,7 @@ app.config(function($routeProvider) {
             templateUrl: "partials/search.html",
             controller: 'SearchCtrl'
         }).
-         when("/saveroute", {
+         when("/saveroute/:routeid", {
             templateUrl: "partials/save-route.html",
             controller: 'SaveRouteCtrl'
         }).
