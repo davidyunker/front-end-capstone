@@ -1,7 +1,7 @@
 "use strict";
 
 var app = angular.module("BeforeYouGoApp", ["ngRoute"])
-.constant("FirebaseURL", "before-you-go.firebaseapp.com");
+.constant("FirebaseURL", "https://before-you-go.firebaseio.com");
 
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
@@ -31,7 +31,7 @@ app.config(function($routeProvider) {
         }).
          when("/saveroute", {
             templateUrl: "partials/save-route.html",
-            controller: 'SearchCtrl'
+            controller: 'SaveRouteCtrl'
         }).
 
         otherwise("/");

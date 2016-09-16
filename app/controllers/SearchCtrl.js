@@ -8,6 +8,7 @@ app.controller("SearchCtrl", function ($scope, AuthFactory, FirebaseFactory, FBC
 let _uid = AuthFactory.getUid()
 
 
+
    $scope.pokeRouteInfo = {
     name: "",
     address1: "",
@@ -19,6 +20,7 @@ let _uid = AuthFactory.getUid()
     gyms: "",
     rare: "",
     details: "",
+    routeid: "",
     uid: _uid
   };
 
@@ -37,14 +39,28 @@ let _uid = AuthFactory.getUid()
           $scope.pokeRouteInfo.routeLengthKM = data.rows[0].elements[0].distance.value
           $scope.pokeRouteInfo.time = data.rows[0].elements[0].duration.text
 
-          console.log('TESTING THINGS', $scope.pokeRouteInfo);
 
+          })
+        .then(function() {
+          console.log('TESTING THINGS', $scope.pokeRouteInfo);
+          FirebaseFactory.postPokeRoute($scope.pokeRouteInfo)
+           .then(function(result) {
+            console.log(result);
+            $scope.pokeRouteInfo.routeid = result.name
+            console.log('TESTING MORE THINGS', $scope.pokeRouteInfo)
+            // $location.url('/saveroute');
         })
+        })
+
   }
+
+
    $scope.enterKeyPressed = function(keyEvent) {
   if (keyEvent.which === 13)
-    $scope.loadBreweries();
+    $scope.loadPokeRouteInfo();
 }
+
+
 
 
 })
