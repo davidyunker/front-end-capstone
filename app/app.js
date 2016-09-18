@@ -33,6 +33,10 @@ app.config(function($routeProvider) {
             templateUrl: "partials/save-route.html",
             controller: 'SaveRouteCtrl'
         }).
+        when("/yourroutes/:yourid", {
+            templateUrl: "partials/your-routes.html",
+            controller: 'YourRoutesCtrl'
+        }).
 
         otherwise("/");
         // way to make sure they don't go anywhere else.
