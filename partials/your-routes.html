@@ -1,0 +1,18 @@
+<div class="container" ng-init="loadYourRoutesToDom()">
+<a class="waves-effect waves-light btn-large light-blue darken-1">Your routes</a>
+<a class="waves-effect waves-light btn-large light-blue darken-1">All routes</a>
+
+
+<div ng-repeat="route in pokeRouteInfo">
+  <h1>{{route.name}}</h1>
+  <p>{{route.address1}}</p>
+  <p>{{route.address2}}</p>
+  <p>{{route.routeLengthMiles}}</p>
+  <p>{{route.routeLengthKM}}</p>
+  <p>{{route.time}}</p>
+  <p>{{route.gyms}}</p>
+  <p>{{route.pokestops}}</p>
+  <p>{{route.rare}}</p>
+  <p>{{route.details}}</p>
+</div>
+</div>

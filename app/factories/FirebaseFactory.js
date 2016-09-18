@@ -2,7 +2,7 @@
 
 // added to .gitIgnore until we get this to work.
 
-app.factory("FirebaseFactory", ($q, $http, FirebaseURL, FBCreds, $location) => {
+app.factory("FirebaseFactory", ($q, $http, FirebaseURL, FBCreds, $location, $routeParams) => {
 
   let currentRouteID = "";
 
@@ -48,9 +48,22 @@ let patchPokeRoute = (routeObj, routeID) => {
        $http.put(`${FirebaseURL}/pokeroutes/${routeID}.json`,
         JSON.stringify(routeObj))
         .success((ObjFromFirebase) => {
-          // console.log(ObjFromFirebase);
-          // // currentRouteID = ObjFromFirebase.name;
-          // console.log(currentRouteID)
+          resolve(ObjFromFirebase);
+        })
+        .error ((error) => {
+          reject(error);
+    })
+    })
+
+
+}
+
+let patchPokeRouteAgain = (routeObj, routeID) => {
+  console.log("patchPokeRoute is running", routeID)
+    return $q((resolve, reject) => {
+       $http.put(`${FirebaseURL}/pokeroutes/${routeID.routeid}.json`,
+        JSON.stringify(routeObj))
+        .success((ObjFromFirebase) => {
           resolve(ObjFromFirebase);
         })
         .error ((error) => {
@@ -67,7 +80,6 @@ let getPokeRouteFromFB = (currentRouteID) => {
   return $q((resolve, reject) => {
        $http.get(`${FirebaseURL}/pokeroutes/${currentRouteID.routeid}.json`)
        .success((ObjFromFirebase) => {
-        // console.log(ObjFromFirebase)
         resolve(ObjFromFirebase);
        })
        .error ((error) => {
@@ -75,7 +87,19 @@ let getPokeRouteFromFB = (currentRouteID) => {
        })
      })
 }
-    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute}
+
+
+// let getYourPokeRoutes = (yourID) => {
+//   console.log("getYourPokeRoutes is running", yourID)
+//   return $q((resolve, reject) => {
+//     $http.get(`${FirebaseURL}/pokeroutes/?orderBy="uid"&equalTo="${yourID.uid}"`)
+//     .success((ObjFromFirebase) => {
+//     resolve(ObjFromFirebase);
+//   })
+//   })
+
+// }
+    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain}
   });
 
 
