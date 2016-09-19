@@ -21,6 +21,12 @@ app.controller("YourRoutesCtrl", function ($scope, $window, AuthFactory, Firebas
     $location.url(`/allroutes`);
   };
 
+$scope.routeEdit = (routeID) => {
+console.log("routeEdit is running", routeID)
+$location.url(`/saveroute/${routeID}`)
+}
+
+
   $scope.routeDelete = (routeID) => {
     console.log("routeDelete is running", routeID)
     FirebaseFactory.deletePokeRoute(routeID)

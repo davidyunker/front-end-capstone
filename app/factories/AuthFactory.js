@@ -45,6 +45,7 @@ function logInGoogle() {
   };
 
   let logoutUser = function () {
+    console.log("logoutUser is working!")
     return firebase.auth().signOut();
   };
 
