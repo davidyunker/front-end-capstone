@@ -3,16 +3,15 @@
 <a class="waves-effect waves-light btn-large light-blue darken-1">All routes</a>
 
 
-<div ng-repeat="route in pokeRouteInfo">
+<div ng-repeat="route in pokeRouteInfoList">
   <h1>{{route.name}}</h1>
-  <p>{{route.address1}}</p>
-  <p>{{route.address2}}</p>
-  <p>{{route.routeLengthMiles}}</p>
-  <p>{{route.routeLengthKM}}</p>
-  <p>{{route.time}}</p>
-  <p>{{route.gyms}}</p>
-  <p>{{route.pokestops}}</p>
-  <p>{{route.rare}}</p>
-  <p>{{route.details}}</p>
+  <p>Starting address: {{route.address1}}</p>
+  <p>Ending address: {{route.address2}}</p>
+  <p>How far: {{route.routeLengthKM}}</p>
+  <p>How long will it take: {{route.time}}</p>
+  <p>Number of gyms: {{route.gyms}}</p>
+  <p>Number of pokestops: {{route.pokestops}}</p>
+  <p>Rare Pokemon: {{route.rare}}</p>
+  <p>More details: {{route.details}}</p>
 </div>
 </div>

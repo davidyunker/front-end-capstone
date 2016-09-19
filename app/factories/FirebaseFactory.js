@@ -9,7 +9,7 @@ app.factory("FirebaseFactory", ($q, $http, FirebaseURL, FBCreds, $location, $rou
 
 let getPokeRouteInfo = (myKey) => {
     return $q ((resolve, reject) => {
-      $http.get(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${myKey.address1}&destinations=${myKey.address2}&mode=walking&key=${FBCreds.googleKey}`)
+      $http.get(`https://maps.googleapis.com/maps/api/distancematrix/json?&origins=${myKey.address1}&destinations=${myKey.address2}&mode=walking&key=${FBCreds.googleKey}`)
       .success((itemObject) => {
         resolve(itemObject);
       })
@@ -89,18 +89,18 @@ let getPokeRouteFromFB = (currentRouteID) => {
      })
 }
 
+let getYourPokeRoutes = (yourID) => {
+  console.log("getYourPokeRoutes is running", yourID)
+  return $q((resolve, reject) => {
+  console.log("getYourPokeRoutes is running", yourID)
+    $http.get(`${FirebaseURL}/pokeroutes.json?orderBy="uid"&equalTo="${yourID.yourid}"`)
+    .success((ObjFromFirebase) => {
+    resolve(ObjFromFirebase);
+  })
+  })
 
-// let getYourPokeRoutes = (yourID) => {
-//   console.log("getYourPokeRoutes is running", yourID)
-//   return $q((resolve, reject) => {
-//     $http.get(`${FirebaseURL}/pokeroutes/?orderBy="uid"&equalTo="${yourID.uid}"`)
-//     .success((ObjFromFirebase) => {
-//     resolve(ObjFromFirebase);
-//   })
-//   })
-
-// }
-    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain}
+}
+    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain, getYourPokeRoutes}
   });
 
 
