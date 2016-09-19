@@ -37,6 +37,10 @@ app.config(function($routeProvider) {
             templateUrl: "partials/your-routes.html",
             controller: 'YourRoutesCtrl'
         }).
+        when("/allroutes", {
+            templateUrl: "partials/all-routes.html",
+            controller: 'AllRoutesCtrl'
+        }).
 
         otherwise("/");
         // way to make sure they don't go anywhere else.

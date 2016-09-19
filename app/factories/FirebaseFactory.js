@@ -100,7 +100,17 @@ let getYourPokeRoutes = (yourID) => {
   })
 
 }
-    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain, getYourPokeRoutes}
+
+let getAllPokeRoutes = () => {
+  return $q((resolve, reject) => {
+    $http.get(`${FirebaseURL}/pokeroutes.json`)
+    .success((ObjFromFirebase) => {
+    resolve(ObjFromFirebase);
+  })
+  })
+
+}
+    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain, getYourPokeRoutes, getAllPokeRoutes}
   });
 
 
