@@ -13,6 +13,7 @@
     <p>Number of pokestops: {{route.pokestops}}</p>
     <p>Rare Pokemon: {{route.rare}}</p>
     <p>More details: {{route.details}}</p>
+      <button class="btn btn-caution" ng-click="routeEdit(route.routeid)">Edit route</button>
     <button class="btn btn-danger" ng-click="routeDelete(route.routeid)">Delete route</button>
   </div>
 </div>

@@ -24,6 +24,10 @@ app.controller("AllRoutesCtrl", function ($scope, $window, AuthFactory, Firebase
     })
       })
 }
+  $scope.routeEdit = (routeID) => {
+  console.log("routeEdit is running", routeID)
+$location.url(`/saveroute/${routeID}`)
+}
 
   //   $scope.goToYourRoutes = () => {
   //   $location.url(`/yourroutes/:yourid`);

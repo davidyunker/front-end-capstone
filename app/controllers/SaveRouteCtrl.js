@@ -37,6 +37,7 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
       $location.url(`/yourroutes/${result.uid}`);
     })
   }
+
 })
 
 

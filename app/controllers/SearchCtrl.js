@@ -71,8 +71,5 @@ let _uid = AuthFactory.getUid()
     $scope.loadPokeRouteInfo();
 }
 
-
-
-
 })
 

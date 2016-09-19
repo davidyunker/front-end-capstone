@@ -9,19 +9,11 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-app="BeforeYouGoApp">
-  <nav>
-    <div class="nav-wrapper light-blue darken-4">
-      <a href="#/login" class="brand-logo">Before You GO</a>
-       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Should I GO?</a></li>
-        <li><a href="#">Fighting FAQ</a></li>
-        <li><a href="/login" ng-click="logout()">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-
-
+ <div ng-controller="TopCtrl">
+    <div ng-include="'partials/navbar.html'"></div>
 <div ng-view></div>
+
+</div>
 
 
 
@@ -46,6 +38,7 @@
 <script type="text/javascript" src="app/factories/AuthFactory.js"></script>
 <script type="text/javascript" src="app/factories/FirebaseFactory.js"></script>
 <!-- CONTROLLERS -->
+<script type="text/javascript" src="app/controllers/TopCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/SaveRouteCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/YourRoutesCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/AllRoutesCtrl.js"></script>
