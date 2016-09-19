@@ -61,6 +61,7 @@ let patchPokeRoute = (routeObj, routeID) => {
 let patchPokeRouteAgain = (routeObj, routeID) => {
   console.log("patchPokeRoute is running", routeID)
     return $q((resolve, reject) => {
+
        $http.put(`${FirebaseURL}/pokeroutes/${routeID.routeid}.json`,
         JSON.stringify(routeObj))
         .success((ObjFromFirebase) => {

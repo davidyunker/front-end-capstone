@@ -16,6 +16,7 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
  $scope.savePokeRouteInfo = () => {
   console.log("savePokeRouteInfo is running. This is scope.... ", $scope.pokeRouteInfo)
   console.log("this is the route params", $routeParams)
+  $scope.pokeRouteInfo.routeid = $routeParams.routeid
   FirebaseFactory.patchPokeRouteAgain($scope.pokeRouteInfo, $routeParams)
     .then(function(result) {
       console.log("this is the result", result)
