@@ -12,4 +12,9 @@ app.controller("YourRoutesCtrl", function ($scope, $window, AuthFactory, Firebas
         $scope.pokeRouteInfoList = result
     })
   }
+
+
+   $scope.goToAllRoutes = () => {
+    $location.url(`/allroutes`);
+  };
 })

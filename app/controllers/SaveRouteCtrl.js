@@ -13,6 +13,10 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
   }
 
 
+   $scope.goToAllRoutes = () => {
+    $location.url(`/allroutes`);
+  };
+
  $scope.enterKeyPressed = function(keyEvent) {
   if (keyEvent.which === 13)
     $scope.savePokeRouteInfo();

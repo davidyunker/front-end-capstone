@@ -58,6 +58,10 @@ let _uid = AuthFactory.getUid()
   }
 
 
+ $scope.goToAllRoutes = () => {
+    $location.url(`/allroutes`);
+  };
+
    $scope.enterKeyPressed = function(keyEvent) {
   if (keyEvent.which === 13)
     $scope.loadPokeRouteInfo();
