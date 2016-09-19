@@ -17,6 +17,10 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
     $location.url(`/allroutes`);
   };
 
+  //   $scope.goToYourRoutes = () => {
+  //   $location.url(`/yourroutes/:yourid`);
+  // };
+
  $scope.enterKeyPressed = function(keyEvent) {
   if (keyEvent.which === 13)
     $scope.savePokeRouteInfo();
