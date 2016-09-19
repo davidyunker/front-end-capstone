@@ -11,4 +11,8 @@ app.controller("AllRoutesCtrl", function ($scope, $window, AuthFactory, Firebase
         $scope.pokeRouteInfoList = result
     })
   }
+
+  //   $scope.goToYourRoutes = () => {
+  //   $location.url(`/yourroutes/:yourid`);
+  // };
 })

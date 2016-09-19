@@ -1,11 +1,12 @@
 <div class="container">
-<a class="waves-effect waves-light btn-large light-blue darken-1">Your routes</a>
+<a class="waves-effect waves-light btn-large light-blue darken-1" ng-click="goToYourRoutes()">Your routes</a>
 <a class="waves-effect waves-light btn-large light-blue darken-1" ng-click="goToAllRoutes()">All routes</a>
     <h1>Make your route</h1>
 
     <form>
       <div class="form-group">
         <label>Starting address</label>
+        <!-- issue with hitting enter key on this -->
         <input type="text" class="form-control" placeholder="Address 1" ng-model="pokeRouteInfo.address1" ng-keypress="enterKeyPressed($event)"/>
         <label>Ending address</label>
         <input type="text" class="form-control" placeholder="Address 2" ng-model="pokeRouteInfo.address2" ng-keypress="enterKeyPressed($event)"/>

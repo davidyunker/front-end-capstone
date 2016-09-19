@@ -110,7 +110,21 @@ let getAllPokeRoutes = () => {
   })
 
 }
-    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain, getYourPokeRoutes, getAllPokeRoutes}
+
+
+let deletePokeRoute = (routeID) => {
+    console.log("deletePokeRoute is running", routeID)
+    return $q((resolve, reject) => {
+    $http.delete(`${FirebaseURL}/pokeroutes/${routeID}.json`)
+    .success((ObjFromFirebase) => {
+      console.log("this is the ObjFromFirebase", ObjFromFirebase)
+    resolve(ObjFromFirebase);
+  })
+  })
+}
+
+
+    return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain, getYourPokeRoutes, getAllPokeRoutes, deletePokeRoute}
   });
 
 
