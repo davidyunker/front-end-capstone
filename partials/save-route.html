@@ -10,20 +10,18 @@
         <input type="text" class="form-control" ng-model="pokeRouteInfo.address1" ng-keypress="enterKeyPressed($event)"/>
         <label>Ending address</label>
         <input type="text" class="form-control" ng-model="pokeRouteInfo.address2" ng-keypress="enterKeyPressed($event)"/>
-        <label>Route length in miles</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.routeLengthMiles"/>
          <label>Route length in kilometers</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.routeLengthKM"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.routeLengthKM" ng-keypress="enterKeyPressed($event)"/>
          <label>Time to complete walk</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.time"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.time" ng-keypress="enterKeyPressed($event)"/>
          <label>Number of Pokestops</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.pokestops"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.pokestops" ng-keypress="enterKeyPressed($event)"/>
         <label> Number of gyms</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.gyms"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.gyms" ng-keypress="enterKeyPressed($event)"/>
         <label> Rare Pokemon sightings</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.rare"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.rare" ng-keypress="enterKeyPressed($event)"/>
         <label> Other details</label>
-        <input type="textarea" class="form-control" ng-model="pokeRouteInfo.details"/>
+        <input type="textarea" class="form-control" ng-model="pokeRouteInfo.details" ng-keypress="enterKeyPressed($event)"/>
       </div>
       <button class="btn btn-default" ng-click="savePokeRouteInfo()">Save route</button>
     </form>

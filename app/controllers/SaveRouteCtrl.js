@@ -13,6 +13,11 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
   }
 
 
+ $scope.enterKeyPressed = function(keyEvent) {
+  if (keyEvent.which === 13)
+    $scope.savePokeRouteInfo();
+}
+
  $scope.savePokeRouteInfo = () => {
   console.log("savePokeRouteInfo is running. This is scope.... ", $scope.pokeRouteInfo)
   console.log("this is the route params", $routeParams)
@@ -20,8 +25,10 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
   FirebaseFactory.patchPokeRouteAgain($scope.pokeRouteInfo, $routeParams)
     .then(function(result) {
       console.log("this is the result", result)
-      console.log(result.uid)
-      // $location.url(`/yourroutes/${result.uid}`);
+      console.log("this is the result uid", result.uid)
+      $location.url(`/yourroutes/${result.uid}`);
     })
   }
 })
+
+

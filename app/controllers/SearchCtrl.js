@@ -13,7 +13,6 @@ let _uid = AuthFactory.getUid()
     name: "",
     address1: "",
     address2: "",
-    routeLengthMiles: "",
     routeLengthKM: "",
     time: "",
     pokestops: "",
@@ -33,10 +32,9 @@ let _uid = AuthFactory.getUid()
         .then(function(data){
           // console.log("it worked!")
           // console.log("data", data)
-          $scope.pokeRouteInfo.address1 = data.destination_addresses[0]
-          $scope.pokeRouteInfo.address2 = data.origin_addresses[0]
-          $scope.pokeRouteInfo.routeLengthMiles = data.rows[0].elements[0].distance.text
-          $scope.pokeRouteInfo.routeLengthKM = data.rows[0].elements[0].distance.value
+          $scope.pokeRouteInfo.address1 = data.origin_addresses[0]
+          $scope.pokeRouteInfo.address2 = data.destination_addresses[0]
+          $scope.pokeRouteInfo.routeLengthKM = data.rows[0].elements[0].distance.text
           $scope.pokeRouteInfo.time = data.rows[0].elements[0].duration.text
 
 
