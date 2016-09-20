@@ -13,6 +13,15 @@ $scope.weatherInfo = {
     icon: ""
 }
 
+let _uid = AuthFactory.getUid()
+
+
+ $scope.goToYourRoutes = () => {
+      console.log("this is the userID", _uid)
+      $location.url(`/yourroutes/${_uid}`);
+
+  }
+
 $scope.buttonClicked = false;
 
 
