@@ -4,6 +4,16 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
 
   $scope.pokeRouteInfo = ""
 
+
+
+  let _uid = AuthFactory.getUid()
+
+  $scope.goToYourRoutes = () => {
+      console.log("this is the userID", _uid)
+      $location.url(`/yourroutes/${_uid}`);
+
+  }
+
   $scope.getRoute = () => {
     FirebaseFactory.getPokeRouteFromFB($routeParams)
       .then(function(result) {

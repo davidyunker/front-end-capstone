@@ -25,6 +25,13 @@ let _uid = AuthFactory.getUid()
 
 
 
+  $scope.goToYourRoutes = () => {
+      console.log("this is the userID", _uid)
+      $location.url(`/yourroutes/${_uid}`);
+
+  }
+
+
 
  $scope.loadPokeRouteInfo = function() {
       console.log("loadPokeRouteInfo has started!")

@@ -2,6 +2,14 @@
 
 app.controller("AllRoutesCtrl", function ($scope, $window, AuthFactory, FirebaseFactory, FBCreds, $http, $routeParams, $location) {
 
+let _uid = AuthFactory.getUid()
+
+
+ $scope.goToYourRoutes = () => {
+      console.log("this is the userID", _uid)
+      $location.url(`/yourroutes/${_uid}`);
+
+  }
 
   $scope.loadAllRoutesToDom = () => {
     console.log("loadAllRoutesToDom is running")
