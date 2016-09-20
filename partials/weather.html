@@ -1,0 +1,28 @@
+<div class="container">
+<a class="waves-effect waves-light btn-large light-blue darken-1" ng-click="goToYourRoutes()">Your routes</a>
+<a class="waves-effect waves-light btn-large light-blue darken-1" ng-click="goToAllRoutes()">All routes</a>
+    <h2>Check the weather</h2>
+
+    <form>
+      <div class="form-group" ng-show="!buttonClicked">
+        <label>City</label>
+        <input type="text" class="form-control" placeholder="City name" ng-model="weatherInfo.city" ng-keypress="enterKeyPressed($event)"/>
+        <label>State abbreviation</label>
+        <input type="text" class="form-control" placeholder="State abbreviation (TN, KY, MO)" ng-model="weatherInfo.state" ng-keypress="enterKeyPressed($event)"/>
+      </div>
+
+        <div class="row" ng-show="buttonClicked">
+        <div class="col s12 m5">
+          <div class="card-panel red darken-1">
+            <span class="white-text">
+            <h3>{{weatherInfo.location}}</h3>
+            <p>Temperature: {{weatherInfo.temp}}</p>
+            <p>Feels like: {{weatherInfo.feelslike}}</p>
+            <p>Conditions: {{weatherInfo.weather}}</p>
+          </span>
+            </div>
+          </div>
+        </div>
+      <button class="btn btn-default" ng-click="loadWeatherInfo()">See the weather</button>
+    </form>
+</div>
