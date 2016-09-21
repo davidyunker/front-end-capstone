@@ -128,7 +128,7 @@ let deletePokeRoute = (routeID) => {
 
 let getWeatherInfo = (myKey) => {
     return $q ((resolve, reject) => {
-      $http.get(`http://api.wunderground.com/api/${FBCreds.weatherKey}/conditions/q/${myKey.state}/${myKey.city}.json`)
+      $http.get(`http://api.wunderground.com/api/${FBCreds.weatherKey}/conditions/hourly/q/${myKey.state}/${myKey.city}.json`)
       .success((itemObject) => {
         resolve(itemObject);
       })
@@ -138,6 +138,20 @@ let getWeatherInfo = (myKey) => {
       });
     });
     };
+
+
+    // let getHourWeather = (myKey) => {
+    // return $q ((resolve, reject) => {
+    //   $http.get(`http://api.wunderground.com/api/${FBCreds.weatherKey}/hourly/q/${myKey.state}/${myKey.city}.json`)
+    //   .success((itemObject) => {
+    //     resolve(itemObject);
+    //   })
+    //   .error((error) => {
+    //     reject(error);
+    //     console.log("error", error)
+    //   });
+    // });
+    // };
 
 
     return {getPokeRouteInfo, postPokeRoute, getPokeRouteFromFB, patchPokeRoute, patchPokeRouteAgain, getYourPokeRoutes, getAllPokeRoutes, deletePokeRoute, getWeatherInfo}
