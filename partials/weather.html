@@ -1,7 +1,8 @@
 <div class="container">
 <a class="waves-effect waves-light btn-large blue darken-4" ng-show="$parent.isLoggedIn" ng-click="goToYourRoutes()">Your routes</a>
-<a class="waves-effect waves-light btn-large blue darken-4" ng-show="$parent.isLoggedIn"ng-click="goToAllRoutes()">All routes</a>
-    <h2>Check the weather</h2>
+<a class="waves-effect waves-light btn-large blue darken-4" ng-show="$parent.isLoggedIn" ng-click="goToAllRoutes()">All routes</a>
+    <h3 ng-show="!buttonClicked">Check the weather</h3>
+    <h3 ng-show="buttonClicked">Current weather</h3>
 
     <form>
       <div class="form-group" ng-show="!buttonClicked">
@@ -16,6 +17,7 @@
           <div class="card-panel indigo darken-4">
             <span class="white-text">
             <h3>{{weatherInfo.location}}</h3>
+            <img src="{{weatherInfo.icon}}">
             <p>Temperature: {{weatherInfo.temp}}</p>
             <p>Feels like: {{weatherInfo.feelslike}}</p>
             <p>Conditions: {{weatherInfo.weather}}</p>
@@ -23,6 +25,21 @@
             </div>
           </div>
         </div>
-      <button class="btn btn-default" ng-click="loadWeatherInfo()">See the weather</button>
+           <div class="row" ng-show="buttonClicked">
+        <div class="col s12 m5">
+          <div class="card-panel indigo darken-4">
+            <span class="white-text">
+            <h3>Three-hour forecast</h3>
+            <p>Hour: {{weatherInfo.hour}} | Conditions: {{weatherInfo.hourcondition}} | Weather: {{weatherInfo.hourwx}} | Feels like: {{weatherInfo.hourfeels}}</p>
+            <p>Hour: {{weatherInfo.hour2}} | Conditions: {{weatherInfo.hourcondition2}} | Weather: {{weatherInfo.hourwx2}} | Feels like: {{weatherInfo.hourfeels2}}</p>
+            <p>Hour: {{weatherInfo.hour3}} | Conditions: {{weatherInfo.hourcondition3}} | Weather: {{weatherInfo.hourwx3}} | Feels like: {{weatherInfo.hourfeels3}}</p>
+          </span>
+            </div>
+          </div>
+        </div>
+
+
+      <button class="btn btn-default" ng-show="!buttonClicked" ng-click="loadWeatherInfo()">See the weather</button>
+      <button class="btn btn-default" ng-show="buttonClicked" ng-click="reloadWeatherPage()">Check another city</button>
     </form>
 </div>
