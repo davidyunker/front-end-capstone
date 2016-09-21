@@ -11,7 +11,7 @@
       <ul class="side-nav" id="mobile-demo">
         <li><a href="#/weather">Should I GO?</a></li>
         <li><a href="#/faq">Fighting FAQ</a></li>
-        <li><a href="#/login" ng-click="logout()">Logout</a></li>
+        <li ng-show="$parent.isLoggedIn"><a href="#/login" ng-click="logout()">Logout</a></li>
       </ul>
     </div>
   </nav>
