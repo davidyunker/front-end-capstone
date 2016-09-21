@@ -39,6 +39,10 @@ let _uid = AuthFactory.getUid()
 
 $scope.buttonClicked = false;
 
+   $scope.goToSearch = () => {
+    $location.url(`/search`);
+  };
+
 
    $scope.goToAllRoutes = () => {
     $location.url(`/allroutes`);
