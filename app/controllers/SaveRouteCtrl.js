@@ -44,12 +44,19 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
   console.log("savePokeRouteInfo is running. This is scope.... ", $scope.pokeRouteInfo)
   console.log("this is the route params", $routeParams)
   $scope.pokeRouteInfo.routeid = $routeParams.routeid
-  FirebaseFactory.patchPokeRouteAgain($scope.pokeRouteInfo, $routeParams)
-    .then(function(result) {
-      console.log("this is the result", result)
-      console.log("this is the result uid", result.uid)
-      $location.url(`/yourroutes/${result.uid}`);
+  FirebaseFactory.getPokemonImage($scope.pokeRouteInfo)
+    .then(function(data){
+          console.log("it worked!")
+          console.log("data", data)
+       $scope.pokeRouteInfo.rarepokemonimg = data.sprites.front_default
     })
+    .then(function() {
+  FirebaseFactory.patchPokeRouteAgain($scope.pokeRouteInfo, $routeParams)
+  .then(function() {
+    $location.url(`/yourroutes/${_uid}`);
+    })
+})
+
   }
 
 })
