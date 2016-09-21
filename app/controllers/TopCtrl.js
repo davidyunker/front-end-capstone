@@ -12,10 +12,12 @@ app.controller('TopCtrl', function($scope, $location, $window, AuthFactory, Fire
         })
     }
 
+    $(document).ready(function(){
+    $(".button-collapse").sideNav();
+  });
+
+
 });
 
 
-  $(document).ready(function(){
-    $(".button-collapse").sideNav();
-  });
 

@@ -22,9 +22,6 @@ let _uid = AuthFactory.getUid()
     })
   }
 
-  // $scope.goToYourRoutes = () => {
-  //   $location.url(`/yourroutes/:yourid`);
-  // };
 
    $scope.goToAllRoutes = () => {
     $location.url(`/allroutes`);
