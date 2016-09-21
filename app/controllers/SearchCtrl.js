@@ -18,6 +18,7 @@ let _uid = AuthFactory.getUid()
     pokestops: "",
     gyms: "",
     rare: "",
+    rarepokemonimg: "",
     details: "",
     routeid: "",
     uid: _uid
