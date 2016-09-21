@@ -4,6 +4,10 @@ app.controller("AllRoutesCtrl", function ($scope, $window, AuthFactory, Firebase
 
 let _uid = AuthFactory.getUid()
 
+   $scope.goToSearch = () => {
+    $location.url(`/search`);
+  };
+
 
  $scope.goToYourRoutes = () => {
       console.log("this is the userID", _uid)

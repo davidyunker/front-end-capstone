@@ -27,6 +27,10 @@ let _uid = AuthFactory.getUid()
     $location.url(`/allroutes`);
   };
 
+     $scope.goToSearch = () => {
+    $location.url(`/search`);
+  };
+
 $scope.routeEdit = (routeID) => {
 console.log("routeEdit is running", routeID)
 $location.url(`/saveroute/${routeID}`)

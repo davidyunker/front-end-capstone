@@ -1,4 +1,5 @@
 <div class="container" ng-init="loadYourRoutesToDom()">
+<a class="waves-effect waves-light btn-large blue darken-4" ng-click="goToSearch()">Create a route</a>
 <a class="waves-effect waves-light btn-large blue darken-4" ng-click="goToYourRoutes()">Your routes</a>
 <a class="waves-effect waves-light btn-large blue darken-4" ng-click="goToAllRoutes()">All routes</a>
 
@@ -17,7 +18,7 @@
               <p>More details: {{route.details}}</p>
             </div>
             <div class="card-action">
-         <button class="btn yellow accent-2" ng-click="routeEdit(route.routeid)">Edit route</button>
+         <button class="btn yellow accent-2" ng-click="routeEdit(route.routeid)"><span style="color: black">Edit route</span></button>
         <button class="btn red darken-1" ng-click="routeDelete(route.routeid)">Delete route</button>
             </div>
           </div>

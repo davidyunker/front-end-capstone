@@ -22,6 +22,10 @@ app.controller("SaveRouteCtrl", function ($scope, $window, AuthFactory, Firebase
     })
   }
 
+   $scope.goToSearch = () => {
+    $location.url(`/search`);
+  };
+
 
    $scope.goToAllRoutes = () => {
     $location.url(`/allroutes`);
