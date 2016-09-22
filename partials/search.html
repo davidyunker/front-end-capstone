@@ -3,14 +3,14 @@
 <a class="waves-effect waves-light btn-large blue darken-4" ng-click="goToAllRoutes()">All routes</a>
     <h3>Make your route</h3>
 
-    <form>
+    <form ng-submit="loadPokeRouteInfo()">
       <div class="form-group">
         <label>Starting address</label>
         <!-- issue with hitting enter key on this -->
-        <input type="text" class="form-control" placeholder="Address 1" ng-model="pokeRouteInfo.address1" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" placeholder="Address 1" ng-model="pokeRouteInfo.address1"/>
         <label>Ending address</label>
-        <input type="text" class="form-control" placeholder="Address 2" ng-model="pokeRouteInfo.address2" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" placeholder="Address 2" ng-model="pokeRouteInfo.address2"/>
       </div>
-      <button class="btn btn-default" ng-click="loadPokeRouteInfo()">Create route</button>
+      <button class="btn btn-default">Create route</button>
     </form>
 </div>
