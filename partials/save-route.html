@@ -3,27 +3,26 @@
 <a class="waves-effect waves-light btn-large blue darken-4" ng-click="goToYourRoutes()">Your routes</a>
 <a class="waves-effect waves-light btn-large blue darken-4" ng-click="goToAllRoutes()">All routes</a>
 
-<form>
+<form ng-submit="savePokeRouteInfo()">
       <div class="form-group">
       <label>Name of route</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.name" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.name"/>
         <label>Starting address</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.address1" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.address1"/>
         <label>Ending address</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.address2" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.address2"/>
          <label>Route length in kilometers</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.routeLengthKM" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.routeLengthKM"/>
          <label>Time to complete walk</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.time" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.time"/>
          <label>Number of Pokestops</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.pokestops" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.pokestops"/>
         <label> Number of gyms</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.gyms" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.gyms"/>
         <label> Rare Pokemon sightings</label>
-        <input type="text" class="form-control" ng-model="pokeRouteInfo.rare" ng-keypress="enterKeyPressed($event)"/>
+        <input type="text" class="form-control" ng-model="pokeRouteInfo.rare"/>
         <label> Other details</label>
-        <input type="textarea" class="form-control" ng-model="pokeRouteInfo.details" ng-keypress="enterKeyPressed($event)"/>
+        <input type="textarea" class="form-control" ng-model="pokeRouteInfo.details"/>
       </div>
-      <button class="btn btn-default" ng-click="savePokeRouteInfo()">Save route</button>
+      <button class="btn btn-default">Save route</button>
     </form>
-
