@@ -1,12 +1,17 @@
 "use strict";
 
-app.controller("AllRoutesCtrl", function ($scope, $window, AuthFactory, FirebaseFactory, FBCreds, $http, $routeParams, $location) {
+app.controller("AllRoutesCtrl", function ($scope, $window, AuthFactory, FirebaseFactory, FBCreds, $http, $routeParams, $location, SearchTermData) {
+
+ $scope.searchText = SearchTermData;
+
 
 let _uid = AuthFactory.getUid()
+
 
    $scope.goToSearch = () => {
     $location.url(`/search`);
   };
+
 
 
  $scope.goToYourRoutes = () => {
@@ -14,6 +19,7 @@ let _uid = AuthFactory.getUid()
       $location.url(`/yourroutes/${_uid}`);
 
   }
+
 
   $scope.loadAllRoutesToDom = () => {
     console.log("loadAllRoutesToDom is running")
@@ -41,7 +47,5 @@ let _uid = AuthFactory.getUid()
 $location.url(`/saveroute/${routeID}`)
 }
 
-  //   $scope.goToYourRoutes = () => {
-  //   $location.url(`/yourroutes/:yourid`);
-  // };
+
 })

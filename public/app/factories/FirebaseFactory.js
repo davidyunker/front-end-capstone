@@ -128,7 +128,7 @@ let deletePokeRoute = (routeID) => {
 
 let getWeatherInfo = (myKey) => {
     return $q ((resolve, reject) => {
-      $http.get(`http://api.wunderground.com/api/${FBCreds.weatherKey}/conditions/hourly/q/${myKey.state}/${myKey.city}.json`)
+      $http.get(`https://api.wunderground.com/api/${FBCreds.weatherKey}/conditions/hourly/q/${myKey.state}/${myKey.city}.json`)
       .success((itemObject) => {
         resolve(itemObject);
       })
@@ -142,7 +142,7 @@ let getWeatherInfo = (myKey) => {
 
 let getPokemonImage = (myKey) => {
   return $q ((resolve, reject) => {
-         $http.get(`http://pokeapi.co/api/v2/pokemon/${myKey.rare}/`)
+         $http.get(`https://pokeapi.co/api/v2/pokemon/${myKey.rare}/`)
       .success((itemObject) => {
         resolve(itemObject);
       })

@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("YourRoutesCtrl", function ($scope, $window, AuthFactory, FirebaseFactory, FBCreds, $http, $routeParams, $location) {
+app.controller("YourRoutesCtrl", function ($scope, $window, AuthFactory, FirebaseFactory, FBCreds, $http, $routeParams, $location, SearchTermData) {
 
 
 let _uid = AuthFactory.getUid()
@@ -21,7 +21,6 @@ let _uid = AuthFactory.getUid()
         $scope.pokeRouteInfoList = result
     })
   }
-
 
    $scope.goToAllRoutes = () => {
     $location.url(`/allroutes`);
@@ -49,5 +48,7 @@ $location.url(`/saveroute/${routeID}`)
     })
       })
 }
+
+ $scope.searchText = SearchTermData;
 
 })
